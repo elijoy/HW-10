@@ -1,40 +1,27 @@
 class Procedure:
 
     def __init__(self, procedure_name, procedure_date, practioner_name, charges, patient_ID):
-        self.procedure_name = procedure_name
-        self.procedure_date = procedure_date
-        self.practioner_name = practioner_name
-        self.charges = charges
-        self.patient_ID = patient_ID
-
-
-    def set_procedure_name(self, procedure_name):
-        self.procedure_name = procedure_name
-
-    def set_procedure_date(self, procedure_date):
-        self.procedure_date = procedure_date
-
-    def set_practioner_name(self, practioner_name):
-        self.practioner_name = practioner_name
-
-    def set_charges(self,charges):
-        self.charges = charges
+        self.__procedure_name = procedure_name
+        self.__procedure_date = procedure_date
+        self.__practioner_name = practioner_name
+        self.__charges = charges
+        self.__patient_ID = patient_ID
 
     def set_patient_ID(self,patient_ID):
-        self.patient_ID = patient_ID
+        self.__patient_ID = patient_ID
 
     def get_procedure_name(self):
-        return self.procedure_name
+        return self.__procedure_name
 
     def get_procedure_date(self):
-        return self.procedure_date
+        return self.__procedure_date
     
     def get_practioner_name(self):
-        return self.practioner_name
+        return self.__practioner_name
 
     def get_charges(self):
-        return self.charges
+        return self.__charges
     
     def get_patient_ID(self):
-        return self.patient_ID
+        return self.__patient_ID
 

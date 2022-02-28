@@ -5,9 +5,9 @@ import ProcedureClass as b
 def main():
         
     #variables/setting up everything
-    vet = True
-    NotVet = False
-    Matt_Jones = a.Patient(1, "Matt Jones", "123 Main st, Waco TX 76706", "254-555-7415", vet)
+    # vet = True
+    # NotVet = False
+    Matt_Jones = a.Patient(1, "Matt Jones", "123 Main st, Waco TX 76706", "254-555-7415", True)
     Irvine = b.Procedure("Physical Exam", "2/15/2022", "Dr. Irvine", 250.00, 1)
     Hamilton = b.Procedure("MRI", "2/15/2022", "Dr. Hamilton", 1500, 1)
     Drey = b.Procedure("CT Scan", "2/17/2022", "Dr. Drey", 1200, 2)
@@ -48,10 +48,14 @@ def main():
               "\n" + "Charge: $", format(Drey.get_charges(), ',.2f'), sep='')
         total += float(Drey.get_charges())
 
+    discount = total * vet_discount
+    # print(discount)
+    # New_total = total - discount
+    # print("Total Charges: $", format(New_total, ',.2f'), sep = '')
 
-
-    if Matt_Jones.get_veteran_status == vet:
+    if Matt_Jones.get_veteran_status() == True:
         print()
+        New_total = total - discount
         print("Total Charges: $", format(New_total, ',.2f'), sep = '')
     else:
         print()
